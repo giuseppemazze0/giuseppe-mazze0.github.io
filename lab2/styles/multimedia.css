@@ -1,0 +1,17 @@
+@import url(cidade.css);
+
+
+
+figure {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: auto;
+}
+figure > img {
+    width: 150px;
+    height: auto;
+    padding: 3px;
+    border-radius: 20px;
+}

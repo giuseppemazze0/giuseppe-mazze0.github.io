@@ -1,0 +1,7 @@
+@import url(cidade.css);
+
+iframe {
+    display: block;
+    margin: auto;
+    border-radius: 30px;
+}
