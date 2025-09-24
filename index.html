@@ -3,48 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
     <link rel="stylesheet" href="styles.css">
     <title>Giuseppe Mazzeo</title>
 </head>
 <body>
     <header>
-        <h1>Primeira Página Web!</h1>
+        <h2>Giuseppe M.</h2>
+
+        <nav>
+            <ul>
+                <li><a href="#lab-page">Laboratórios</a></li>
+                <li><a href="#diw-page">Diw</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <div>
-            <h2>Aceda a minha cidade!</h1>
-            <div>
-                <a href="lab1/cidade/index.html">Lab1</a>
-                <a href="lab2/cidade/index.html">Lab2</a>
-            </div>
-        </div>
-
-        <div>
-            <h2>Acesa aos exercícios!</h2>
-            <div>
-                <a href="lab2/exercicios.html">exercícios lab 2</a>
-            </div>
-        </div>
-    </nav>
 
     <main>
-        <p>Eis a minha primeira página Web!</p>
+        <section id="hero-page">
+            <div>
+                <h1>Já sabe onde vai viajar nessas férias?</h1>
+                <p>
+                    Temos uma possível ideia para você! Confira a secção "laboratórios" e mergulhe em novidades, curiosidades e surpresas.
+                </p>
+                <a href="#lab-page">Ver laboratórios</a>
+            </div>
+        </section>
 
-        <p>
-            Na Unidade Curricular de <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232" target="_blank">Desenvolvimento de Interfaces Web</a> abordaremos as seguintes tecnologias Web &#127760;:
-        </p>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React e Next.js</li>
-        </ul>
+        <section id="lab-page">
+            <nav>
+                <div>
+                    <h2>Aceda a minha cidade!</h2>
+                    <div>
+                        <a href="lab1/cidade/index.html">Lab1</a>
+                        <a href="lab2/cidade/index.html">Lab2</a>
+                        <a href="lab3/cidade/index.html">Lab3</a>
+                    </div>
+                </div>
 
-        <p>Iremos criar soluções criativas!</p>
+                <div>
+                    <h2>Aceda aos exercícios!</h2>
+                    <div>
+                        <a href="lab2/exercicios.html">exercícios lab 2</a>
+                    </div>
+                </div>
+            </nav>
 
-        <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web">
+            <div>
+                <img class="pessoa-placa" src="images/pessoa-lab1.jpg" alt="">
 
+                <a href="">Lab1</a>
+            </div>
+
+            
+        </section>
+
+        <section id="diw-page">
+            <p>
+                Eis a minha primeira página Web!
+            </p>
+            <p>
+                Na Unidade Curricular de <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232" target="_blank">Desenvolvimento de Interfaces Web</a> abordaremos as seguintes tecnologias Web &#127760;:
+            </p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React e Next.js</li>
+            </ul>
+            <p>
+                Iremos criar soluções criativas!
+            </p>
+            <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web">
+        </section>
     </main>
 
     <footer>

@@ -101,7 +101,7 @@ main {
 main > h2 {
     font-size: 1.8em;
 }
-main > p {
+.texto-apresentacao > p {
     padding: 10px 0;
     margin: 10px;
     text-align: justify;

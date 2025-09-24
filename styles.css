@@ -10,38 +10,140 @@
 
 
 
+:root {
+    --cor-fundo-header: var(--cor-fundo-hero-page);
+    --cor-fundo-hero-page: #F2B84B;
+    --cor-fundo-lab-page: white;
+    --cor-fundo-diw-page: #8C786C;
+    --cor-fundo-footer: black;
+
+    --cor-letras: #0D0D0D;
+}
+
+
+
 body {
+    position: relative;
     height: 100vh;
-    background-color: #b3b3b386;
+}
+p, h1, h2, a {
+    color: var(--cor-letras);
 }
 
 
 
 header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+    width: 100%;
     padding: 40px;
+    border-radius: 0 0 30px 30px;
     font-size: 1.8em;
     text-align: center;
+    color: white;
+    background-color: var(--cor-fundo-header);
+}
+header h2 {
+    font-size: 1em;
+}
+header ul {
+    display: flex;
+    list-style-type: none;
+    column-gap: 50px;
+    margin-left: 90px;
+}
+header a {
+    text-decoration: none;
+    font-size: 0.7em;
 }
 
 
 
-nav {
+#hero-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--cor-fundo-hero-page);
+}
+#hero-page div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 700px;
+    height: 300px;
+}
+#hero-page div h1 {
+    font-size: 3.5em;
+}
+#hero-page div p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+#hero-page a[href="#lab-page"] {
+    padding: 10px 22px;
+    border: 1px solid var(--cor-letras);
+    border-radius: 7px;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+#lab-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: var(--cor-fundo-lab-page);
+}
+#lab-page nav {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
     margin-bottom: 70px;
 }
-nav > div > div {
-    padding: 10px;
-    text-align: center;
+#lab-page > div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rebeccapurple;
+    width: 33%;
+    max-width: 400px;
+    height: 38vw;
+    max-height: 460px;
+}
+.pessoa-placa {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+.pessoa-placa ~ a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 62%;
+    height: 26%;
+    margin-left: 9.5%;
+    margin-top: 3%;
+    font-size: 2em;
+    text-decoration: none;
 }
 
-
-
-main {
-    margin: 20px;
+#diw-page {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    background-color: var(--cor-fundo-diw-page);
 }
-main > img {
+#diw-page > img {
     display: block;
     width: 240px;
     height: auto;
@@ -50,7 +152,9 @@ main > img {
 
 
 
+
 footer {
     display: flex;
     justify-content: center;
+    background-color: var(--cor-fundo-footer);
 }
