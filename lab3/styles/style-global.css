@@ -65,20 +65,20 @@ header > div h1 {
 .hamburguer {
     display: none;
 }
-nav {
+header nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 12px;
 }
-nav ul {
+header nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     column-gap: 40px;
     list-style-type: none;
 }
-nav a {
+header nav a {
     position: relative;
     font-size: 1.1em;
     padding: 10px 10px 10px 45px;
@@ -88,22 +88,22 @@ nav a {
     color: black;
     background-color: var(--cor-fundo-nav-a);
 }
-nav li {
+header nav li {
     transition: all .3s ease-in-out;
 }
-nav li:hover {
+header nav li:hover {
     color: black;
     filter: brightness(75%);
     transform: translateY(5px);
 }
-nav .material-symbols-outlined {
+header nav .material-symbols-outlined {
     position: absolute;
     top: 50%;
     left: 8%;
     font-size: 1.3em;
     transform: translateY(-50%);
 }
-nav a:first-child .material-symbols-outlined {
+header nav a:first-child .material-symbols-outlined {
     left: 11.5%;
 }
 .pagina-atual {
@@ -122,7 +122,7 @@ main {
 main > h2 {
     font-size: 1.8em;
 }
-.texto > p {
+.texto p {
     padding: 10px 0;
     margin: 10px;
     text-align: justify;

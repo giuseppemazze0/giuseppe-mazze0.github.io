@@ -2,27 +2,63 @@
 
 
 
+html { scroll-behavior: smooth; }
+
+
+
+main {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+
+
+h2 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .ancoras {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 500px;
+    padding: 5px;
     margin: 30px auto 80px auto;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: var(--cor-fundo-header);
 }
-.ancoras > a {
+.ancoras ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style-type: none;
+}
+.ancoras li {
+    width: 33%;
+    text-align: center;
+}
+.ancoras a {
+    display: block;
+    width: 100%;
     text-decoration: none;
     color: white;
+    transition: font-size .3s ease-in-out;
 }
-.ancoras > a:hover {
-    color: black;
+.ancoras a:hover {
+    border-bottom: 1px solid red;
+    font-size: 1.15em;
 }
 
 
-section {
+#fotografias, #video, #poema {
     width: 100%;
-    height: 500px;
+    height: 110vh;
+}
+section {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 section h3 {
     font-size: 1.5em;
@@ -34,12 +70,89 @@ figure {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 700px;
+    max-width: 1600px;
+    padding: 20px 0;
     margin: auto;
 }
 figure > img {
+    cursor: pointer;
     width: 150px;
     height: auto;
-    padding: 3px;
+    padding: 5px;
+    border: 1px solid transparent;
     border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+figure > img:hover {
+    transform: scale(1.1);
+}
+
+/* #fotografias ul {
+    position: relative;
+    list-style-type: none;
+}
+#fotografias h4 {
+    font-size: 1.5em;
+}
+#fotografias li {
+    position: absolute;
+    width: 800px;
+    max-width: 1000px;
+    right: 50%;
+    padding: 100px 0;
+    transform: translateX(50%);
+} */
+
+
+
+.parallax {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.primeiro-parallax {
+    background-image: url(../cidade/images/predio-sao-paulo.jpg);
+}
+.segundo-parallax {
+    background-image: url(../cidade/images/grafite-sao-paulo.jpg);
+} 
+.parallax p {
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: justify;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.83);
+}
+
+
+
+#poema {
+    border-radius: 0 0 10px 10px;
+    background-color: black;
+    overflow: hidden;
+}
+#poema > h3 {
+    color: white;
+}
+#poema > div {
+    right: 10vh;
+    bottom: 300px;
+    width: 300px;
+    background-color: #f2cc4fdf;
+}
+#poema > div > p {
+    font-size: 1.2em;
+}
+#poema > img {
+    display: block;
+    width: 400px;
+    height: auto;
+    margin: auto;
 }
