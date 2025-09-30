@@ -57,7 +57,12 @@ header {
     background-color: var(--cor-fundo-header);
 }
 header h2 {
+    display: flex;
+    justify-content: space-between;
     font-size: 1em;
+}
+.hamburguer {
+    display: none;
 }
 header ul {
     display: flex;
@@ -128,8 +133,12 @@ header a {
     border-radius: 10px;
     background-color: var(--cor-fundo-aside);
 }
-#asideEsq { grid-area: asideEsq; }
-#asideDir { grid-area: asideDir; }
+#asideEsq { 
+    grid-area: asideEsq; 
+}
+#asideDir { 
+    grid-area: asideDir; 
+}
 #divMeio {
     grid-area: divMeio;
     position: relative;
@@ -139,9 +148,15 @@ header a {
     background-position: center;
     transform: translateY(25%);
 }
-#divMesclar { display: none; }
-#asideEsq:hover ~ #divMeio { background-image: url(images/pessoa-apontando-reverso.png); }
-#asideDir:hover ~ #divMeio { background-image: url(images/pessoa-apontando.png); }
+#divMesclar { 
+    display: none; 
+}
+#asideEsq:hover ~ #divMeio { 
+    background-image: url(images/pessoa-apontando-reverso.png); 
+}
+#asideDir:hover ~ #divMeio { 
+    background-image: url(images/pessoa-apontando.png); 
+}
 #divMeio > p:nth-child(1),
 #divMeio > p:nth-child(2),
 #divMeio > p:nth-child(3) {
@@ -153,9 +168,13 @@ header a {
     transform: translate(-50%, 50%);
 }
 #divMeio > p:nth-child(2),
-#divMeio > p:nth-child(3) { display: none; }
+#divMeio > p:nth-child(3) { 
+    display: none; 
+}
 #asideDir:hover ~ #divMeio > p:nth-child(1),
-#asideEsq:hover ~ #divMeio > p:nth-child(1) { display: none; }
+#asideEsq:hover ~ #divMeio > p:nth-child(1) { 
+    display: none; 
+}
 #asideEsq:hover ~ #divMeio > p:nth-child(2) { 
     display: block; 
     transform: translate(-50%, 200%);
@@ -165,13 +184,13 @@ header a {
     transform: translate(-50%, 500%);
 }
 #asideEsq > div, 
-#asideDir > div,
+#asideDir > div, 
 #divMesclar > div {
     display: flex;
     flex-direction: column;
     row-gap: 50px;
 }
-#lab-page h2 {
+#lab-page h3 {
     font-size: 2.1em;
     text-align: center;
     margin: 55px 0 90px 0;
@@ -182,6 +201,7 @@ header a {
     border: 2px solid transparent;
     font-size: 1.25em;
     text-decoration: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.562);
     color: white;
     background-color: var(--cor-fundo-lab-page-a);
     transition: all .25s ease-in-out;
@@ -282,6 +302,9 @@ footer > p {
         display: flex; 
         text-align: center; 
     }
+    #divMesclar h3 {
+        margin: 30px 0 40px 0;
+    }
 
     footer {
         flex-direction: column;
@@ -291,3 +314,36 @@ footer > p {
     }
 }
 
+
+
+@media screen and (max-width: 650px) {
+    header, nav, ul { 
+        flex-direction: column;
+    }
+    header:hover {
+        border: 1px solid rgba(0, 0, 0, 0.285);
+    }
+    header:hover ~ main {
+        padding-top: 160px;
+    }
+    header h2 {
+        width: 100%;
+        align-items: center;
+    }
+    header nav {
+        display: none;
+    }
+    header:hover nav {
+        display: flex;
+    }
+    header ul {
+        margin: 0;
+        margin-top: 30px;
+        row-gap: 20px;
+    }
+    
+    .hamburguer {
+        display: block;
+        font-size: 1.2em;
+    }
+}
