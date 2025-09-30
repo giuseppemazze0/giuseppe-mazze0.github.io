@@ -17,7 +17,7 @@
 
 body {
     display: grid;
-    grid-template-rows: 30% 1fr 5%;
+    grid-template-rows: 15% 1fr 5%;
     grid-template-areas: 
     "header"
     "main"
@@ -32,33 +32,36 @@ body {
 header {
     grid-area: header;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
     background-color: var(--cor-fundo-header);
 }
 header div {
-    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
 }
 header div img {
-    position: absolute;
-    top: -30%;
-    left: 17%;
-    width: 100px;
-    height: auto;
-
+    width: auto;
+    height: 40px;
 }
 header div h1 {
     font-size: 4.1em;
     color: white;
-    transform: translateY(-50%);
 }
 nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    column-gap: 15px;
     padding: 12px;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    column-gap: 40px;
+    list-style-type: none;
 }
 nav a {
     position: relative;
@@ -94,14 +97,14 @@ nav a:first-child .material-symbols-outlined {
 main {
     grid-area: main;
     padding: 20px 15px 15px 15px;
-    margin: 60px 15px 15px 15px;
+    margin: 30px 15px;
     border-radius: 10px;
     background-color: var(--cor-fundo-main);
 }
 main > h2 {
     font-size: 1.8em;
 }
-.texto-apresentacao > p {
+.texto > p {
     padding: 10px 0;
     margin: 10px;
     text-align: justify;
@@ -120,6 +123,7 @@ footer {
     justify-content: center;
     padding: 10px;
     background-color: var(--cor-fundo-footer);
+
 }
 footer p {
     color: white;
