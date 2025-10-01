@@ -1,5 +1,11 @@
 @import url(style-global.css);
 
+@keyframes transparencia-foto {
+    0% { opacity: 1; }
+    50% { opacity: 0.1; }
+    100% { opacity: 1; }
+}
+
 
 
 html { scroll-behavior: smooth; }
@@ -7,6 +13,7 @@ html { scroll-behavior: smooth; }
 
 
 main {
+    position: relative;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
@@ -14,20 +21,29 @@ main {
 
 
 
-h2 {
-    padding-left: 15px;
-    padding-right: 15px;
+.topo {
+    padding: 0 15px;
+}
+
+.container-gif {
+    width: calc(100vw-30px);
+    height: 100vh;
+    margin-top: 20px;
+    background-color: black;
+    overflow: hidden;
+}
+.gif {
+    width: 100%;
+    height: 100vh;
 }
 
 .ancoras {
+    position: absolute;
+    top: 5.5%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 500px;
-    padding: 5px;
-    margin: 30px auto 80px auto;
-    border-radius: 20px;
-    background-color: var(--cor-fundo-header);
+    width: 100%;
 }
 .ancoras ul {
     display: flex;
@@ -36,22 +52,61 @@ h2 {
     list-style-type: none;
 }
 .ancoras li {
-    width: 33%;
+    width: 15%;
+    max-width: 180px;
     text-align: center;
 }
 .ancoras a {
+    position: relative;
+    z-index: 1;
     display: block;
     width: 100%;
+    max-width: 180px;
+    padding: 15px 20px;
+    border-bottom: 5px solid lightgray; 
+    border-radius: 30px;
+    font-size: 1.1em;
     text-decoration: none;
-    color: white;
-    box-shadow: 0 0 0 transparent;
-    transition: font-size .3s ease-in-out;
+    color: black;
+    background-color: lightgray;
+    box-shadow: 0 2px 7px black;
+    transition: all .3s ease-in-out;
 }
 .ancoras a:hover {
-    border-bottom: 1px solid red;
-    font-size: 1.15em;
-    box-shadow: 5px 5px 5px black;
+    font-size: 1.4em;
+    box-shadow: 0 2px 7px #FDE394;
 }
+.ancoras a:hover::after,
+.ancoras a:hover::before {
+    border-color: #FDE394;
+}
+.ancoras a::after,
+.ancoras a::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    border-top: 3px solid black;
+    border-radius: 50%;
+    background-color: lightgray;
+    transition: border .3s ease-in-out;
+}
+.ancoras a::after {
+    top: -3vw;
+    right: 1.5vw;
+    width: 7vw;
+    height: 7vw;
+    max-width: 90px;
+    max-height: 90px;
+}
+.ancoras a::before {
+    top: -2vw;
+    left: 2vw;
+    width: 5.5vw;
+    height: 5.5vw;
+    max-width: 80px;
+    max-height: 80px;
+}
+
 
 
 #fotografias, #video, #poema {
@@ -68,13 +123,24 @@ section h3 {
 
 
 
+#fotografias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.18);
+}
+#fotografias > h3 {
+    font-size: 2em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
 figure {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1600px;
+    max-width: 600px;
     padding: 20px 0;
-    margin: auto;
 }
 figure > img {
     cursor: pointer;
@@ -84,10 +150,35 @@ figure > img {
     border: 1px solid transparent;
     border-radius: 10px;
     transition: all .3s ease-in-out;
+    animation: transparencia-foto 1s ease-in-out 3s infinite;
 }
 figure > img:hover {
     transform: scale(1.1);
+    animation: none;
 }
+.avenida-paulista-1 { animation-duration: 6.1s; }
+.beco-do-batman-e-vila-madalena-1 { animation-duration: 8.4s; }
+.catedral-da-se-1 { animation-duration: 7.2s; }
+.edificio-copan-1 { animation-duration: 8.1s; }
+.liberdade-1 { animation-duration: 6.7s; }
+.mercadao-municipal-1 { animation-duration: 8.9s; }
+.museu-do-ipiranga-1 { animation-duration: 7.8s; }
+.masp-1 { animation-duration: 6.5s; }
+.parque-ibirapuera-1 { animation-duration: 7.4s; }
+.ponte-estaiada-octavio-frias-de-oliveira-1 { animation-duration: 8.7s; }
+
+.avenida-paulista-2 { animation-duration: 7.1s; }
+.beco-do-batman-e-vila-madalena-2 { animation-duration: 8.2s; }
+.catedral-da-se-2 { animation-duration: 6.4s; }
+.edificio-copan-2 { animation-duration: 7.9s; }
+.liberdade-2 { animation-duration: 8.6s; }
+.mercadao-municipal-2 { animation-duration: 6.2s; }
+.museu-do-ipiranga-2 { animation-duration: 8.8s; }
+.masp-2 { animation-duration: 7.3s; }
+.parque-ibirapuera-2 { animation-duration: 6.8s; }
+.ponte-estaiada-octavio-frias-de-oliveira-2 { animation-duration: 8.5s; }
+
+
 
 /* #fotografias ul {
     position: relative;
@@ -106,6 +197,13 @@ figure > img:hover {
 } */
 
 
+
+#video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .centralizar-video {
     display: flex;
     justify-content: center;
@@ -115,7 +213,7 @@ figure > img:hover {
 .centralizar-video iframe {
     display: inline-block;
     width: 75vw;
-    height: 45vw;
+    height: calc(75vw * 9 / 16);
 }
 
 
@@ -128,6 +226,7 @@ figure > img:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: black;
 }
 .primeiro-parallax {
     background-image: url(../cidade/images/predio-sao-paulo.jpg);
@@ -138,7 +237,7 @@ figure > img:hover {
 .parallax p {
     position: absolute;
     bottom: 0;
-    margin: 10px;
+    margin: 20px;
     padding: 10px;
     font-size: 1.2em;
     text-align: justify;

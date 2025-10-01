@@ -14,9 +14,8 @@
     --cor-fundo-body: rgba(128, 128, 128, 0.295);
     --cor-fundo-header: var(--cor-fundo-hero-page);
     --cor-fundo-hero-page: #F29829;
-    --cor-fundo-aside: #347373;
-    --cor-fundo-lab-page-a: #8C2C08;
-    --cor-fundo-lab-page-a-hover: #8c2b08a9;
+    --cor-fundo-aside: #73624D;
+    --cor-fundo-lab-page-a: #48433C;
     --cor-fundo-diw-page: transparent;
     --cor-fundo-diw-page-p: white; 
     --cor-fundo-footer: black;
@@ -47,7 +46,7 @@ header {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    z-index: 10;
+    z-index: 1;
     width: 100%;
     padding: 25px 40px;
     border-radius: 0 0 30px 30px;
@@ -65,11 +64,44 @@ header h2 {
     display: none;
 }
 header ul {
+    position: relative;
     display: flex;
     list-style-type: none;
     column-gap: 50px;
     margin-left: 90px;
 }
+header li:nth-child(1)::after,
+header li:nth-child(2)::after,
+header li:nth-child(3)::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width .6s ease-in-out;
+}
+header li:nth-child(1)::after {
+    left: -3px;
+    bottom: 2px;
+}
+header li:nth-child(1):hover::after {
+    width: 52px;
+}
+header li:nth-child(2)::after {
+    left: 94px;
+    bottom: 2px;
+}
+header li:nth-child(2):hover::after {
+    width: 108px;
+}
+header li:nth-child(3)::after {
+    left: 247px;
+    bottom: 2px;
+}
+header li:nth-child(3):hover::after {
+    width: 41px;
+}
+
 header a {
     text-decoration: none;
     font-size: 0.7em;
@@ -90,7 +122,7 @@ header a {
     height: 100vh;
     background-color: var(--cor-fundo-hero-page);
 }
-#hero-page div {
+#hero-page > div {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -98,10 +130,10 @@ header a {
     width: 700px;
     height: 300px;
 }
-#hero-page div h1 {
+#hero-page > div h1 {
     font-size: 3.5em;
 }
-#hero-page div p {
+#hero-page > div p {
     font-size: 1.5em;
     margin-bottom: 20px;
 }
@@ -109,8 +141,13 @@ header a {
     padding: 10px 22px;
     border: 1px solid var(--cor-letras);
     border-radius: 7px;
+    box-shadow: 3px 3px 0px black;
     font-size: 1.2em;
     text-decoration: none;
+    transition: transform .2s ease-in-out;
+}
+#hero-page a[href="#lab-page"]:hover {
+    transform: translateY(-5px);
 }
 
 #lab-page {
@@ -130,7 +167,8 @@ header a {
     align-items: center;
     width: 100%;
     max-width: 300px;
-    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.36);
+    border-radius: 0 10px 0 10px;
     background-color: var(--cor-fundo-aside);
 }
 #asideEsq { 
@@ -183,33 +221,43 @@ header a {
     display: block;
     transform: translate(-50%, 500%);
 }
-#asideEsq > div, 
-#asideDir > div, 
-#divMesclar > div {
+#asideEsq ul, 
+#asideDir ul, 
+#divMesclar ul {
     display: flex;
     flex-direction: column;
     row-gap: 50px;
+    list-style-type: none;
 }
 #lab-page h3 {
     font-size: 2.1em;
     text-align: center;
     margin: 55px 0 90px 0;
 }
-#lab-page a {
-    padding: 15px 60px;
+#lab-page li {
+    display: flex;
+    width: 160px;
+    height: 50px;
     border-radius: 10px;
     border: 2px solid transparent;
-    font-size: 1.25em;
-    text-decoration: none;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.562);
-    color: white;
     background-color: var(--cor-fundo-lab-page-a);
     transition: all .25s ease-in-out;
 }
-#lab-page a:hover {
+#lab-page li:hover {
     border-color: black;
-    background-color: var(--cor-fundo-lab-page-a-hover);
+    filter: brightness(85%);
     transform: translateY(5px);
+}
+#lab-page a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.25em;
+    text-decoration: none;
+    color: white;
 }
 
 #diw-page {
@@ -217,13 +265,13 @@ header a {
     padding: 50px 0;
     background-color: var(--cor-fundo-diw-page);
 }
-#diw-page > div {
+#diw-page > article {
     display: flex;
     align-items: center;
     height: 50%;
     padding: 10px;
 }
-#diw-page > div > div {
+#diw-page > article > div {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -232,10 +280,14 @@ header a {
     padding: 10px 12px;
     margin: auto;
     border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.216);
     background-color: var(--cor-fundo-diw-page-p);
 }
 #diw-page p {
     font-size: 1.1em;
+}
+#diw-page span {
+    text-decoration: underline var(--cor-fundo-hero-page);
 }
 #diw-page ul {
     list-style-position: inside;
@@ -249,7 +301,6 @@ header a {
     height: auto;
     margin: auto;
 }
-
 
 
 
@@ -285,8 +336,8 @@ footer > p {
 
 
 @media screen and (max-width: 950px) {
-    #diw-page > div { flex-direction: column; }
-    #diw-page > div > div { width: 100%; }
+    #diw-page > article { flex-direction: column; }
+    #diw-page > article > div { width: 100%; }
     #diw-page img { display: none; }
 }
 
@@ -345,5 +396,11 @@ footer > p {
     .hamburguer {
         display: block;
         font-size: 1.2em;
+    }
+
+    header li:nth-child(1):hover::after,
+    header li:nth-child(2):hover::after,
+    header li:nth-child(3):hover::after {
+        width: 0;
     }
 }
