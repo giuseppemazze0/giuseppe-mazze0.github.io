@@ -44,11 +44,13 @@ h2 {
     width: 100%;
     text-decoration: none;
     color: white;
+    box-shadow: 0 0 0 transparent;
     transition: font-size .3s ease-in-out;
 }
 .ancoras a:hover {
     border-bottom: 1px solid red;
     font-size: 1.15em;
+    box-shadow: 5px 5px 5px black;
 }
 
 
@@ -104,6 +106,19 @@ figure > img:hover {
 } */
 
 
+.centralizar-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.centralizar-video iframe {
+    display: inline-block;
+    width: 75vw;
+    height: 45vw;
+}
+
+
 
 .parallax {
     position: relative;
@@ -134,6 +149,11 @@ figure > img:hover {
 
 
 #poema {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
     border-radius: 0 0 10px 10px;
     background-color: black;
     overflow: hidden;
@@ -142,17 +162,20 @@ figure > img:hover {
     color: white;
 }
 #poema > div {
-    right: 10vh;
-    bottom: 300px;
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 400px;
+    padding: 30px;
+    border-radius: 0 30px 0 30px;
     background-color: #f2cc4fdf;
 }
 #poema > div > p {
     font-size: 1.2em;
 }
-#poema > img {
+/* #poema > img {
     display: block;
     width: 400px;
     height: auto;
     margin: auto;
-}
+} */
